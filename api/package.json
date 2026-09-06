@@ -1,0 +1,41 @@
+{
+  "name": "api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend service: market data ingestion, scoring engine, HTTP API.",
+  "scripts": {
+    "dev": "node --experimental-strip-types --no-warnings --watch src/server.ts",
+    "start": "node --experimental-strip-types --no-warnings src/server.ts",
+    "test": "node --experimental-strip-types --no-warnings --test \"tests/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "check-feed": "node --experimental-strip-types --no-warnings scripts/check-feed.ts",
+    "check-symbols": "node --experimental-strip-types --no-warnings scripts/check-symbols.ts",
+    "check-accuracy": "node --experimental-strip-types --no-warnings scripts/check-accuracy.ts",
+    "check-freshness": "node --experimental-strip-types --no-warnings scripts/check-freshness.ts",
+    "check-cluster": "node --experimental-strip-types --no-warnings scripts/check-cluster.ts",
+    "check-indices": "node --experimental-strip-types --no-warnings scripts/check-indices.ts",
+    "check-schema": "node --experimental-strip-types --no-warnings scripts/check-schema.ts",
+    "check-coverage": "node --experimental-strip-types --no-warnings scripts/check-coverage.ts",
+    "check-pipeline": "node --experimental-strip-types --no-warnings scripts/check-pipeline.ts",
+    "check-scale": "node --experimental-strip-types --no-warnings scripts/check-scale.ts",
+    "check-load": "node --experimental-strip-types --no-warnings scripts/check-load.ts",
+    "check-sync": "node --experimental-strip-types --no-warnings scripts/check-sync.ts",
+    "explain": "node --experimental-strip-types --no-warnings scripts/explain.ts",
+    "calibrate": "node --experimental-strip-types --no-warnings scripts/calibrate.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.0",
+    "typescript": "^5.9.2"
+  }
+}
